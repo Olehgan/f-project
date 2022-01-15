@@ -47,6 +47,22 @@ export const setErrorRequest = (errorRequestValue: string) =>
     ({type: 'auth/ERROR-REQUEST', errorRequestValue} as const)
 
 
+export const registerTC = (data: RegisterRequestType) => (dispatch: Dispatch<AuthActionsType>) => {
+    // dispatch(toggleIsFetching(true))
+    debugger
+    registerApi.register(data)
+        .then(() => {
+            dispatch(toggleIsRegistration(true))
+        })
+        .catch(e => {
+            // dispatch(setErrorRequest(e.response.data.error))
+            console.log(e.response.data.error)
+        })
+        .finally(() => {
+            // dispatch(toggleIsFetching(false))
+        })
+
+}
 type AuthActionsType =
 // SetEmailErrorType
 // | SetPasswordErrorType
