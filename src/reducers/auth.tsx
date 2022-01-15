@@ -18,17 +18,32 @@ export const authReducer = (state: InitialStateType = initialState, action: Auth
         //     return {...state, passwordError: action.error}
         case 'auth/IS-REGISTRATION' :
             return {...state, isRegistration: action.isRegistration}
+        case 'auth/TOGGLE-IS-FETCHING':
+            return {...state, isFetching: action.isFetching}
+
+        default:
+            return state
     }
 };
-
+// export type SetEmailErrorType = ReturnType<typeof setEmailError>
+// export const setEmailError = (error: null | string) =>
+//     ({type: 'auth/EMAIL-ERROR', error} as const)
+//
+// export type SetPasswordErrorType = ReturnType<typeof setPasswordError>
+// export const setPasswordError = (error: null | string) =>
+//     ({type: 'auth/PASSWORD-ERROR', error} as const)
 
 export type ToggleIsRegistrationType = ReturnType<typeof toggleIsRegistration>
 export const toggleIsRegistration = (isRegistration: boolean) =>
     ({type: 'auth/IS-REGISTRATION', isRegistration} as const)
 
+export type ToggleIsFetchingType = ReturnType<typeof toggleIsFetching>
+export const toggleIsFetching = (isFetching: boolean) =>
+    ({type: 'auth/TOGGLE-IS-FETCHING', isFetching} as const)
 
 
 type AuthActionsType =
 // SetEmailErrorType
 // | SetPasswordErrorType
     | ToggleIsRegistrationType
+    | ToggleIsFetchingType
