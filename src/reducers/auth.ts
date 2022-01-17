@@ -46,6 +46,9 @@ export type SetErrorRequestType = ReturnType<typeof setErrorRequest>
 export const setErrorRequest = (errorRequestValue: string) =>
     ({type: 'auth/ERROR-REQUEST', errorRequestValue} as const)
 
+// export const setState = (state: Partial<InitialStateType>) =>
+//     ({type: 'auth/IS-REGISTRATION', payload: state} as const)
+// setState({isFetching: true})
 
 export const registerTC = (data: RegisterRequestType) => (dispatch: Dispatch<AuthActionsType>) => {
     // dispatch(toggleIsFetching(true))
@@ -55,8 +58,8 @@ export const registerTC = (data: RegisterRequestType) => (dispatch: Dispatch<Aut
             dispatch(toggleIsRegistration(true))
         })
         .catch(e => {
-            // dispatch(setErrorRequest(e.response.data.error))
-            console.log(e.response.data.error)
+            dispatch(setErrorRequest(e.response.data.error))
+            // console.log(e.response.data.error)
         })
         .finally(() => {
             // dispatch(toggleIsFetching(false))

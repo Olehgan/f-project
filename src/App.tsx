@@ -5,6 +5,7 @@ import {SuperButton} from "./components/common/SuperButton/SuperButton";
 import {SuperCheckbox} from "./components/common/SuperCheckbox/SuperCheckbox";
 import {Login} from "./components/Login/Login";
 import {RegistrationContainer} from "./components/Register/RegisterContainer";
+import {Main} from "./components/Main/Main";
 
 function App() {
     return (
@@ -22,7 +23,7 @@ function App() {
             <Routes>
                 <Route path={"/*"} element={<div>404</div>}/>
 
-                <Route path={"/"} element={<div>Main</div>}/>
+                <Route path={"/"} element={<Main/>}/>
                 <Route path={"/login"} element={<Login/>}/>
                 <Route path={"/registration"} element={<RegistrationContainer/>}/>
                 <Route path={"/profile"} element={<div>profile</div>}/>
