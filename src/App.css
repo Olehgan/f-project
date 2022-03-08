@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background: linear-gradient(180deg, #E6D4DE 0%, #9890C7 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .App-logo {
@@ -12,7 +17,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,11 +27,21 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
 }
+
+input::placeholder {
+  font-family: 'SFUIDisplay-Medium';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2D2E46;
+  opacity: 0.5;
+  }
 
 @keyframes App-logo-spin {
   from {
@@ -35,4 +50,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1008px;
 }
